@@ -6,18 +6,28 @@
 
 <body style="background:black; color:lime; font-family:monospace; padding:20px;">
 
-<h3>Initializing...</h3>
-<h4>Scanning your device...</h4>
-
+<h3>Initializing secure connection...</h3>
 <div id="output"></div>
 
 <script>
 let msgs = [
 "[✓] Connecting to device...",
+"[✓] Establishing encrypted tunnel...",
+"[✓] Bypassing firewall...",
 "[✓] Access granted...",
-"[✓] Reading WhatsApp chats...",
-"[✓] Uploading data to server...",
-"[✓] Installing backdoor...",
+"[✓] Scanning storage...",
+"[✓] Reading WhatsApp database...",
+"[✓] Extracting contacts...",
+"[✓] Accessing gallery...",
+"[✓] Uploading images...",
+"[✓] Fetching saved passwords...",
+"[✓] Accessing microphone...",
+"[✓] Recording audio...",
+"[✓] Tracking location...",        // new
+"[✓] Syncing cloud data...",       // new
+"[✓] Sending data to server...",
+"[✓] Installing persistent access...",
+"[✓] Finalizing hack...",
 "[✓] Device hacked successfully 😈"
 ];
 
@@ -27,9 +37,9 @@ function runHack(){
   if(i < msgs.length){
     document.getElementById("output").innerHTML += msgs[i] + "<br>";
     i++;
-    setTimeout(runHack, 1200);
+    setTimeout(runHack, 1500); // slow (1.5 sec)
   } else {
-    document.getElementById("output").innerHTML += "<br><br>😂 Relax! Ye prank tha!";
+    document.getElementById("output").innerHTML += "<br><br>😂 Relax , ye  prank tha!";
   }
 }
 
