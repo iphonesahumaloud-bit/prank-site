@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Error</title>
+</head>
+
+<body style="background:black; color:red; text-align:center; font-family:sans-serif;">
+
+<h2>⚠️ System Error Detected!</h2>
+<p>Your screen is being calibrated...</p>
+
+<script>
+let angle = 0;
+
+function rotateScreen() {
+  angle += 5;
+  document.body.style.transform = "rotate(" + angle + "deg)";
+  document.body.style.transition = "0.1s";
+}
+
+setInterval(rotateScreen, 100);
+</script>
+
+</body>
+</html>
