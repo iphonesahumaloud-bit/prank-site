@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Security Scan</title>
+<style>
+body {
+  background:black;
+  color:lime;
+  font-family:monospace;
+  padding:20px;
+}
+#bar {
+  width:0%;
+  height:20px;
+  background:lime;
+}
+#container {
+  width:100%;
+  background:#222;
+}
+button{
+  padding:10px;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🔒 Security Scan in Progress...</h2>
+
+<div id="container">
+  <div id="bar"></div>
+</div>
+
+<p id="text"></p>
+
+<button onclick="stopPrank()">Exit</button>
+
+<script>
+let progress = 0;
+let bar = document.getElementById("bar");
+let text = document.getElementById("text");
+
+let messages = [
+"Scanning apps...",
+"Checking WhatsApp data...",
+"Analyzing files...",
+"Checking security threats...",
+"Detecting suspicious activity...",
+"Uploading report..."
+];
+
+let i = 0;
+
+let interval = setInterval(() => {
+  progress += 5;
+  bar.style.width = progress + "%";
+
+  if(progress % 20 === 0 && i < messages.length){
+    text.innerHTML += messages[i] + "<br>";
+    i++;
+  }
+
+  if(progress >= 100){
+    clearInterval(interval);
+    text.innerHTML += "<br><br>😂 Relax! Ye prank tha!";
+  }
+}, 500);
+
+function stopPrank(){
+  clearInterval(interval);
+  alert("😂 Prank band kar diya!");
+}
+</script>
+
+</body>
+</html>
